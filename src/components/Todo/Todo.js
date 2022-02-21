@@ -2,11 +2,11 @@ import React from 'react'
 import Button from '../Button/Button'
 import './style.css'
 
-function Todo({todo, onClick, key, isDone, removeTodo}) {
+function Todo({todo, onClick, isDone, removeTodo}) {
     console.log(isDone)
   return (
     <div className="todo">
-        <Button title={'V'} onClick={onClick} id={key}/>
+        <Button title={'V'} onClick={onClick} id={todo.id}/>
             <p className={
             isDone ? 'done' : ''
             }>{todo}</p>

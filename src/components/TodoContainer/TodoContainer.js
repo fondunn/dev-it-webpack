@@ -7,7 +7,7 @@ function TodoContainer({todos, onClick, removeTodo}) {
     <div>
         {
             todos.map((item, idx) => {
-                return <Todo todo={item.title} key={idx} onClick={() => onClick(idx)} isDone={item.isDone} removeTodo={() => removeTodo(idx)}/>
+                return <Todo todo={item.title} key={item.id} onClick={() => onClick(idx)} isDone={item.isDone} removeTodo={() => removeTodo(item.id)}/>
             })
         }
     </div>
