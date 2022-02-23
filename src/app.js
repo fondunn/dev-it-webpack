@@ -1,19 +1,22 @@
-import React, {useState, useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
 import Navigation from "./components/Navigation/Navigation";
 import TableContainer from "./components/TableContainer/TableContainer";
-import {arrayOfObject} from './const/data'
+import { arrayOfObject } from './const/data'
+import { searchByName, searchByGender } from './helpers/helpers'
 
 function App() {
-  const [users, setUsers] = useState(arrayOfObject)
+  const [searchTerm, setSearchTerm] = useState('')
+  const [searchResults, setSearchResults] = useState([])
 
+  useEffect(() => {
+    const result = searchByName(arrayOfObject, searchTerm)
+    setSearchResults(result)
+  }, [searchTerm]);
 
-
-
-
-  return(
+  return (
     <div>
-      <Navigation setUsers={setUsers} users={users}/>
-      <TableContainer users={users}/>
+      <Navigation setSearchTerm={setSearchTerm} setSearchResults={setSearchResults}/>
+      <TableContainer searchResults={searchResults}/>
     </div>
   )
 }

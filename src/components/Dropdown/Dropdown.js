@@ -1,14 +1,19 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
-const Dropdown = () => {
+
+const Dropdown = ({ handleChange, property }) => {
+
+    console.log(property);
+
     return (
-        <select name="Select" id="" >
-            <option>Any</option>
-            <option value='value1'>male</option>
-            <option value='value1'>female</option>
-            <option value='value1'>v/o</option>
-            <option value='value1'>nv/o</option>
+        <select onChange={handleChange}>
+            {
+                property.map(prop => (
+                    <option value={prop}>{prop}</option>
+                ))
+            }
         </select>
+
     )
 }
 

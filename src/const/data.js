@@ -675,3 +675,11 @@ export const arrayOfObject = [
         "favoriteFruit": "apple"
     }
 ]
+
+export const filter1 = [
+    'any', 'male', 'female', 'reservist'
+]
+
+export const filter2 = [
+    'any' , 'A-z', 'Z-a'
+]
